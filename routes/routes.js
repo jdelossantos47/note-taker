@@ -39,7 +39,7 @@ module.exports = app => {
             res.json(notes[req.params.id]);
         });
 
-        // Delete note with specific id
+       // deletes the selected note based on the id.
         app.delete("/api/notes/:id", function(req, res) {
             notes.splice(req.params.id, 1);
             updateDb();
@@ -47,7 +47,6 @@ module.exports = app => {
         });
 
         // VIEW ROUTES
-        // ========================================================
 
         // Display notes.html when /notes is accessed
         app.get('/notes', function(req,res) {
